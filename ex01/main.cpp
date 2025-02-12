@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: christian <christian@student.42.fr>        +#+  +:+       +#+        */
+/*   By: candrese <candrese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 12:26:45 by christian         #+#    #+#             */
-/*   Updated: 2025/02/12 14:02:48 by christian        ###   ########.fr       */
+/*   Updated: 2025/02/12 15:13:20 by candrese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int main() {
 	std::cout << "Original dog idea: " << originalDog.getBrain()->getIdea(0) << std::endl;
 	std::cout << "Copy dog idea: " << copyDog.getBrain()->getIdea(0) << std::endl;
 
-	copyDog.getBrain()->setIdea(0, "I love playing fetch!");
+	copyDog.getBrain()->setIdea(0, "i am cat");
 	std::cout << "\nAfter modifying copy:" << std::endl;
 	std::cout << "Original dog first idea: " << originalDog.getBrain()->getIdea(0) << std::endl;
 	std::cout << "Copy dog first idea: " << copyDog.getBrain()->getIdea(0) << std::endl;

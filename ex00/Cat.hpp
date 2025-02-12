@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: candrese <candrese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/12 11:49:46 by christian         #+#    #+#             */
-/*   Updated: 2025/02/12 19:10:49 by candrese         ###   ########.fr       */
+/*   Created: 2025/02/12 19:08:16 by candrese          #+#    #+#             */
+/*   Updated: 2025/02/12 19:09:46 by candrese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGCAT_HPP
-# define WRONGCAT_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
-# include "WrongAnimal.hpp"
+# include "Animal.hpp"
 
-class WrongCat : public WrongAnimal {
+class Cat : public Animal {
 public:
-	WrongCat();
-	WrongCat(const WrongCat& other);
-	WrongCat& operator=(const WrongCat& other);
-	WrongCat(std::string& type);
-	~WrongCat();
+	Cat();
+	explicit Cat(const std::string& type);
+	Cat(const Cat& other);
+	Cat& operator=(const Cat& other);
+	~Cat() override;
 
-	void makeSound() const; // Will not be called through base pointer
+	void makeSound() const override;
 };
 
 #endif

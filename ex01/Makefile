@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: christian <christian@student.42.fr>        +#+  +:+       +#+         #
+#    By: candrese <candrese@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/12 12:19:53 by christian         #+#    #+#              #
-#    Updated: 2025/02/12 12:41:21 by christian        ###   ########.fr        #
+#    Updated: 2025/02/12 19:06:22 by candrese         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = animals
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++17
+CFLAGS = -Wall -Wextra -Werror -std=c++17 -fsanitize=address
 
 SRCS = main.cpp \
 	Animal.cpp \
