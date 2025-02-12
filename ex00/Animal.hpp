@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: candrese <candrese@student.42.fr>          +#+  +:+       +#+        */
+/*   By: christian <christian@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 15:54:28 by candrese          #+#    #+#             */
-/*   Updated: 2025/02/11 19:02:34 by candrese         ###   ########.fr       */
+/*   Updated: 2025/02/12 11:57:03 by christian        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,21 @@
 # define ANIMAL_HPP
 
 # include <string>
-# include <iostring>
+# include <iostream>
 
 class Animal {
-
 protected:
 	std::string type;
 
-public;
+public:
 	Animal();
-	Animal(std::string& name);
+	explicit Animal(const std::string& type); // explicit to prevent implicit conversions
 	Animal(const Animal &other);
-	~Animal();
+	Animal& operator=(const Animal& other);
+	virtual ~Animal();
 	
-	void makeSound();
-	std::string getType();
-}
+	virtual void makeSound() const;
+	std::string getType() const;
+};
+
+#endif
