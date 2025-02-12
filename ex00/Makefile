@@ -3,24 +3,33 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: candrese <candrese@student.42.fr>          +#+  +:+       +#+         #
+#    By: christian <christian@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/11 15:54:47 by candrese          #+#    #+#              #
-#    Updated: 2025/02/11 19:19:19 by candrese         ###   ########.fr        #
+#    Updated: 2025/02/12 12:03:42 by christian        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = animals
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++17 #-g3 -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -std=c++17
 
-SRCS = main.cpp Cat.cpp Dog.cpp Animal.cpp
+SRCS = main.cpp \
+	Animal.cpp \
+	Dog.cpp \
+	Cat.cpp \
+	WrongAnimal.cpp \
+	WrongCat.cpp
+
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)

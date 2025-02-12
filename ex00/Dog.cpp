@@ -3,35 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: candrese <candrese@student.42.fr>          +#+  +:+       +#+        */
+/*   By: christian <christian@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 15:54:38 by candrese          #+#    #+#             */
-/*   Updated: 2025/02/11 19:14:29 by candrese         ###   ########.fr       */
+/*   Updated: 2025/02/12 11:58:22 by christian        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
+#include "Dog.hpp"
+
 Dog::Dog() : Animal("Dog") {
-	std::cout << "Dog constructor" << std::endl;
+	std::cout << "Dog constructor called" << std::endl;
+}
+
+Dog::Dog(const std::string& type) : Animal(type) {
+	std::cout << "Dog parameterized constructor called for " << type << std::endl;
 }
 
 Dog::Dog(const Dog& other) : Animal(other) {
-	std::cout << "Cat copy constructor" << std::endl;
+	std::cout << "Dog copy constructor called" << std::endl;
 }
 
 Dog& Dog::operator=(const Dog& other) {
-	if (this != &other) {
-		Animal::operator=(other);
-		std::cout << "Dog assignment operator" << std::endl;
-	}
+	Animal::operator=(other);
+	std::cout << "Dog assignment operator called" << std::endl;
 	return *this;
 }
 
 Dog::~Dog() {
-	std::cout << "Dog destructor" << std::endl;
+	std::cout << "Dog destructor called" << std::endl;
 }
 
 void Dog::makeSound() const {
-	std::cout << "baarrrk" << std::endl;
+	std::cout << "Woof!" << std::endl;
 }
