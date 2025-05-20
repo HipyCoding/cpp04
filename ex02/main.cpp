@@ -6,7 +6,7 @@
 /*   By: candrese <candrese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 12:26:45 by christian         #+#    #+#             */
-/*   Updated: 2025/02/12 19:22:50 by candrese         ###   ########.fr       */
+/*   Updated: 2025/05/20 12:38:16 by candrese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int main()
 {
 	// compile test
 	// const AAnimal* meta = new AAnimal();
+
+	// AAnimal test;
 	
 	const AAnimal* j = new Dog();
 	const AAnimal* i = new Cat();

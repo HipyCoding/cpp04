@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: christian <christian@student.42.fr>        +#+  +:+       +#+        */
+/*   By: candrese <candrese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 15:54:38 by candrese          #+#    #+#             */
-/*   Updated: 2025/02/12 14:02:42 by christian        ###   ########.fr       */
+/*   Updated: 2025/05/20 11:45:25 by candrese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,12 @@ Dog::Dog(const Dog& other) : Animal(other) {
 	brain = new Brain(*other.brain); // Deep copy
 }
 
+// shallow copyconstructor - just copying the pointer
+// Dog::Dog(const Dog& other) : Animal(other) {
+// 	this->brain = other.brain;  // Both Dogs now point to the same Brain
+// }
+
+
 Dog& Dog::operator=(const Dog& other) {
 	std::cout << "Dog assignment operator called" << std::endl;
 	if (this != &other) {
@@ -36,6 +42,21 @@ Dog& Dog::operator=(const Dog& other) {
 	}
 	return *this;
 }
+
+// shallow copy assignment operator
+// This is dangerous because:
+// 1. When this Dog is destroyed, it will delete the Brain
+// 2. When the other Dog is destroyed, it will try to delete the same Brain again
+// 3. This will cause a double free error/crash
+// Dog& Dog::operator=(const Dog& other) {
+//      std::cout << "Dog assignment operator called (SHALLOW VERSION)" << std::endl;
+//      if (this != &other) {
+//      Animal::operator=(other);
+//      delete brain;
+//      brain = other.brain;
+//  }
+//  return *this;
+// }
 
 Dog::~Dog() {
 	std::cout << "Dog destructor called" << std::endl;
